@@ -11,7 +11,7 @@ app.set('trust proxy', 1);
 
 // Middleware
 app.use(cors({
-  origin: process.env.CLIENT_URL|| "https://catalyst-one-solution.vercel.app/",
+  origin: "https://catalyst-one-solution.vercel.app/",
   credentials: true
 }));
 app.use(express.json({ limit: '10mb' }));
