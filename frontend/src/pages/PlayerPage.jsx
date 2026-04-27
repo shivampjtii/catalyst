@@ -35,8 +35,8 @@ export default function PlayerPage() {
     const fetchData = async () => {
       try {
         const [{ data: cd }, { data: pd }] = await Promise.all([
-          axios.get(`/api/courses/${courseId}`),
-          axios.get(`/api/progress/${courseId}`)
+          axios.get(`https://catalyst-sqb7.onrender.com/api/courses/${courseId}`),
+          axios.get(`https://catalyst-sqb7.onrender.com/api/progress/${courseId}`)
         ]);
         setCourse(cd.course);
         setProgress(pd.progress);
@@ -69,7 +69,7 @@ export default function PlayerPage() {
     if (!currentVideo || !playerRef.current) return;
     try {
       const time = playerRef.current.getCurrentTime();
-      await axios.post('/api/progress/update-position', {
+      await axios.post('https://catalyst-sqb7.onrender.com/api/progress/update-position', {
         courseId, videoId: currentVideo._id, timestamp: time
       });
     } catch {}
@@ -91,7 +91,7 @@ export default function PlayerPage() {
     }
     // Mark video as complete
     try {
-      await axios.post('/api/progress/complete-video', {
+      await axios.post('https://catalyst-sqb7.onrender.com/api/progress/complete-video', {
         courseId,
         videoId: currentVideo._id,
         youtubeId: currentVideo.youtubeId,

@@ -31,7 +31,7 @@ export default function CoursesPage() {
       if (category !== 'All') params.category = category;
       if (difficulty !== 'All') params.difficulty = difficulty;
       if (debouncedSearch) params.search = debouncedSearch;
-      const { data } = await axios.get('/api/courses', { params });
+      const { data } = await axios.get('https://catalyst-sqb7.onrender.com/api/courses', { params });
       setCourses(data.courses);
     } catch (e) {
       console.error(e);

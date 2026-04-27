@@ -31,11 +31,11 @@ export default function CourseDetail() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const { data } = await axios.get(`/api/courses/${id}`);
+        const { data } = await axios.get(`https://catalyst-sqb7.onrender.com/api/courses/${id}`);
         setCourse(data.course);
         if (isEnrolled) {
           try {
-            const { data: pd } = await axios.get(`/api/progress/${id}`);
+            const { data: pd } = await axios.get(`https://catalyst-sqb7.onrender.com/api/progress/${id}`);
             setProgress(pd.progress);
           } catch {}
         }
@@ -52,7 +52,7 @@ export default function CourseDetail() {
   const enroll = async () => {
     setEnrolling(true);
     try {
-      await axios.post(`/api/courses/enroll/${id}`);
+      await axios.post(`https://catalyst-sqb7.onrender.com/api/courses/enroll/${id}`);
       toast.success('Enrolled successfully!');
       navigate(`/learn/${id}`);
     } catch (e) {

@@ -56,7 +56,7 @@ export default function AddCoursePage() {
     }
     setLoading(true);
     try {
-      const { data } = await axios.get(`/api/youtube/playlist/${playlistId}`);
+      const { data } = await axios.get(`https://catalyst-sqb7.onrender.com/api/youtube/playlist/${playlistId}`);
       setPlaylistData(data);
       setForm(prev => ({
         ...prev,
@@ -91,7 +91,7 @@ export default function AddCoursePage() {
         videos: playlistData.videos,
         totalDuration: playlistData.videos.reduce((a, v) => a + v.duration, 0),
       };
-      await axios.post('/api/courses', courseData);
+      await axios.post('https://catalyst-sqb7.onrender.com/api/courses', courseData);
       toast.success('Course added successfully!');
       setStep(4);
     } catch (e) {

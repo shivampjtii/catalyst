@@ -20,7 +20,7 @@ export const AuthProvider = ({ children }) => {
 
   const fetchMe = async () => {
     try {
-      const { data } = await axios.get('/api/auth/me');
+      const { data } = await axios.get('https://catalyst-sqb7.onrender.com/api/auth/me');
       setUser(data.user);
     } catch {
       logout();
@@ -30,7 +30,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const login = async (email, password) => {
-    const { data } = await axios.post('/api/auth/login', { email, password });
+    const { data } = await axios.post('https://catalyst-sqb7.onrender.com/api/auth/login', { email, password });
     localStorage.setItem('fl_token', data.token);
     axios.defaults.headers.common['Authorization'] = `Bearer ${data.token}`;
     setToken(data.token);
@@ -39,7 +39,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const register = async (name, email, password) => {
-    const { data } = await axios.post('/api/auth/register', { name, email, password });
+    const { data } = await axios.post('https://catalyst-sqb7.onrender.com/api/auth/register', { name, email, password });
     localStorage.setItem('fl_token', data.token);
     axios.defaults.headers.common['Authorization'] = `Bearer ${data.token}`;
     setToken(data.token);

@@ -23,7 +23,7 @@ export default function QuizModal({ video, courseId, courseCategory, difficulty,
     setAnswers({});
     setCurrentQ(0);
     try {
-      const { data } = await axios.post('/api/quiz/generate', {
+      const { data } = await axios.post('https://catalyst-sqb7.onrender.com/api/quiz/generate', {
         videoTitle: video.title,
         videoDescription: video.description,
         courseCategory,
@@ -49,7 +49,7 @@ export default function QuizModal({ video, courseId, courseCategory, difficulty,
       return;
     }
     try {
-      const { data } = await axios.post('/api/quiz/submit', {
+      const { data } = await axios.post('https://catalyst-sqb7.onrender.com/api/quiz/submit', {
         courseId, videoId: video._id || video.youtubeId,
         answers, questions
       });

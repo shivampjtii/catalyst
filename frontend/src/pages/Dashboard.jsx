@@ -52,7 +52,7 @@ export default function Dashboard() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get('/api/progress/dashboard/stats')
+    axios.get('https://catalyst-sqb7.onrender.com/api/progress/dashboard/stats')
       .then(({ data }) => setStats(data.stats))
       .finally(() => setLoading(false));
   }, []);
