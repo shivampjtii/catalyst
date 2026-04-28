@@ -23,7 +23,7 @@ export default function AuthPage() {
       } else {
         if (!form.name.trim()) return toast.error('Name is required');
         await register(form.name, form.email, form.password);
-        toast.success('Account created! Welcome to FocusLearn!');
+        toast.success('Account created! Welcome to Catalyst!');
       }
       navigate('/dashboard');
     } catch (err) {
@@ -92,7 +92,7 @@ export default function AuthPage() {
               <BookOpen size={18} color="white" />
             </div>
             <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 20 }}>
-              FocusLearn
+              Catalyst
             </span>
           </div>
 
