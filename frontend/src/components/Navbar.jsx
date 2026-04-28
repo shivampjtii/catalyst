@@ -89,7 +89,7 @@ export default function Navbar() {
         <div style={styles.logoIcon}>
           <BookOpen size={16} color="white" />
         </div>
-        FocusLearn
+        Catalyst
       </Link>
 
       <div style={styles.navLinks}>
