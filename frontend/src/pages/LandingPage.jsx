@@ -64,7 +64,7 @@ export default function LandingPage() {
           }}>
             <BookOpen size={18} color="white" />
           </div>
-          FocusLearn
+          Catalyst
         </div>
         <div style={{ display: 'flex', gap: 12 }}>
           <button onClick={() => navigate('/auth?mode=login')} style={{
